@@ -1,0 +1,19 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import logo from '../../Assets/Img/logo.png';
+import './index.css';
+
+
+export default class Home extends React.Component {
+    
+    render() {
+        return(
+            <>
+                <img src={logo} alt="Logo" />
+                <h1>VENDAS</h1>
+                <Link to='/MeusClientes' className='btn btn_gray'>Entrar</Link>
+            </>
+        );
+    }
+}
