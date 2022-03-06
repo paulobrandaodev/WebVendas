@@ -11,7 +11,7 @@ export default class Home extends React.Component {
         return(
             <>
                 <img src={logo} alt="Logo" />
-                <h1>VENDAS</h1>
+                <h1>{this.props.titulo}</h1>
                 <Link to='/MeusClientes' className='btn btn_gray'>Entrar</Link>
             </>
         );

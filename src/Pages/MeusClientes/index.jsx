@@ -1,7 +1,26 @@
 import React from "react";
-import lixeira from '../../Assets/Img/lixeira_laranja.png'
+
+import Cliente from "../../Components/Cliente";
 
 export const MeusClientes = () => {
+
+    var cliente1 = {
+        inicial: "P",
+        nome: "Paulo Brandão",
+        totalCliente: "35,90"
+    }
+
+    var cliente2 = {
+        inicial: "P",
+        nome: "Priscila",
+        totalCliente: "99,90"
+    }
+
+    var cliente3 = {
+        inicial: "R",
+        nome: "Rafael",
+        totalCliente: "21,90"
+    }
 
     return(
         <>
@@ -11,29 +30,9 @@ export const MeusClientes = () => {
             </div>
 
             <section>
-
-                <div>
-                    <span>A</span>
-                    <span>
-                        Amanda - Vizinha
-                        <span>R$ 45,90</span>
-                    </span>
-                    <button>
-                        <img src={lixeira} alt="Excluir item" />
-                    </button>
-                </div>
-
-                <div>
-                    <span>A</span>
-                    <span>
-                        Amanda - Vizinha
-                        <span>R$ 45,90</span>
-                    </span>
-                    <button>
-                        <img src={lixeira} alt="Excluir item" />
-                    </button>
-                </div>
-
+                <Cliente obj={cliente1} />
+                <Cliente obj={cliente2} />
+                <Cliente obj={cliente3} />
             </section>
         </>
     );
