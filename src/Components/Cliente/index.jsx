@@ -1,17 +1,17 @@
 import React from "react";
-
+import './style.css';
 import lixeira from '../../Assets/Img/lixeira_laranja.png'
 
 export const Cliente = (props) => {
     
     return(
-        <div>
-            <span>{props.obj.inicial}</span>
-            <span>
+        <div className="cliente">
+            <span className="inicial">{props.obj.inicial}</span>
+            <span className="nome">
                 {props.obj.nome}
-                <span>R$ {props.obj.totalCliente}</span>
+                <span className="preco">R$ {props.obj.totalCliente}</span>
             </span>
-            <button>
+            <button className="btn">
                 <img src={lixeira} alt="Excluir item" />
             </button>
         </div>

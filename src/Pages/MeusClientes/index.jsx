@@ -1,5 +1,5 @@
 import React from "react";
-
+import './index.css';
 import Cliente from "../../Components/Cliente";
 
 export const MeusClientes = () => {
@@ -23,10 +23,10 @@ export const MeusClientes = () => {
     }
 
     return(
-        <>
-            <div>
+        <div className="main_meus_clientes">
+            <div className="topo">
                 <h1>Meus Clientes</h1>
-                <button>+</button>
+                <button className="btn btn_gray">+</button>
             </div>
 
             <section>
@@ -34,7 +34,7 @@ export const MeusClientes = () => {
                 <Cliente obj={cliente2} />
                 <Cliente obj={cliente3} />
             </section>
-        </>
+        </div>
     );
 
 }

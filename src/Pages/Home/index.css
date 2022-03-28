@@ -1,7 +1,8 @@
 @import '../../global.css';
 
-#root{
+.main_home{
     background-color: var(--roxo);
+    width: 100vw;
     color: white;
     height: 100vh;
     display: flex;
@@ -11,11 +12,11 @@
     font-size: 1.5em;
 }
 
-#root img{
+.main_home img{
     max-width: 200px;
 }
 
-.btn{
+.main_home .btn{
     color: white;
     padding: 15px 20px;
     width: 200px;
