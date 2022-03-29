@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import './style.css';
 import lixeira from '../../Assets/Img/lixeira_roxa.png'
-import Modal from "../Modal";
 import { apiVendas } from "../../Services/api";
 
 export const Cliente = (props) => {
@@ -28,6 +27,18 @@ export const Cliente = (props) => {
         })
     }
 
+    const Excluir = () =>{
+        if (window.confirm("Você realmente quer excluir este cliente?")) 
+        {
+            apiVendas.delete('clientes/'+props.obj.id)
+            .then(res => {
+                if(res.status === 200){
+                    window.location.reload()
+                }
+            })
+        }
+    }
+
     return(
 
         <div className="cliente">            
@@ -40,7 +51,7 @@ export const Cliente = (props) => {
                 </span>
             </span>
             <button className="btn">
-                <img src={lixeira} alt="Excluir item" />
+                <img src={lixeira} alt="Excluir item" onClick={() => Excluir()} />
             </button>
             
             <div className={"update "+modal}>
