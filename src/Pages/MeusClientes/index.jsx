@@ -40,10 +40,10 @@ export const MeusClientes = () => {
                 <button className="btn btn_gray" onClick={(e) => AbrirFecharModal(modal)}>+</button>
             </div>
 
-            <Modal acao="Cadastrar" mostrar={modal} funcao={AbrirFecharModal} />
+            <Modal acao="Cadastrar Cliente" mostrar={modal} funcao={AbrirFecharModal} />
 
             <section>
-                {clientes.map((item) => <Cliente obj={item} /> )}                
+                {clientes.map((item) => <Cliente obj={item} key={item.id} /> )}                
             </section>
         </div>
     );
