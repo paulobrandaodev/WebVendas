@@ -27,3 +27,29 @@
     font-size: 1.5em;
     font-weight: bolder;
 }
+
+.cliente .update{
+    position: absolute;
+    display: flex;
+}
+
+.cliente .update input{
+    padding: 15px;
+    width: -webkit-fill-available;
+    border-radius: var(--raio);
+    border: solid 1px #CCC;
+}
+
+.cliente .update button{
+    width: 90px;
+}
+
+/* Mostrar / Ocultar */
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none !important;
+}
+

@@ -1,10 +1,9 @@
-import React, { useState} from "react";
+import React, { useState , useEffect} from "react";
 import { apiVendas } from "../../Services/api";
 import './style.css';
 
 
 export const Modal = (props) => {
-
 
     const [valorInput, setValorInput] = useState('');    
 
@@ -14,7 +13,6 @@ export const Modal = (props) => {
             apiVendas.post('/clientes', {nome : valorInput})
             .then(window.location.reload())
         }
-
     }
 
     return(
