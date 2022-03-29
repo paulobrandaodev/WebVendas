@@ -11,7 +11,7 @@
 }
 
 .cliente .inicial{
-    background-color: var(--laranja);
+    background-color: var(--roxo);
     color: white;
     border-radius: var(--raio);
     padding: 10px 15px ;
@@ -22,7 +22,7 @@
 }
 
 .cliente .preco{
-    color: var(--laranja);
+    color: var(--roxo);
     display: block;
     font-size: 1.5em;
     font-weight: bolder;

@@ -1,6 +1,6 @@
 import React from "react";
 import './style.css';
-import lixeira from '../../Assets/Img/lixeira_laranja.png'
+import lixeira from '../../Assets/Img/lixeira_roxa.png'
 
 export const Cliente = (props) => {
     
