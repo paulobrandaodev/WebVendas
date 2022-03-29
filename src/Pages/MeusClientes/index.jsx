@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import './index.css';
 import Cliente from "../../Components/Cliente";
+import Modal from "../../Components/Modal";
 
 export const MeusClientes = () => {
+
+    const [modal, setModal] = useState("hide");
+
+    const AbrirFecharModal = (estadoAtual) => {
+
+        if(estadoAtual === "hide"){
+            setModal("show")
+        }else{
+            setModal("hide")
+        }
+
+    }
 
     var cliente1 = {
         inicial: "P",
@@ -26,8 +39,10 @@ export const MeusClientes = () => {
         <div className="main_meus_clientes">
             <div className="topo">
                 <h1>Meus Clientes</h1>
-                <button className="btn btn_gray">+</button>
+                <button className="btn btn_gray" onClick={(e) => AbrirFecharModal(modal)}>+</button>
             </div>
+
+            <Modal acao="Cadastrar" mostrar={modal} funcao={AbrirFecharModal} />
 
             <section>
                 <Cliente obj={cliente1} />
