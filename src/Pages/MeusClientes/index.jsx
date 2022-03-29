@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './index.css';
 import Cliente from "../../Components/Cliente";
 import Modal from "../../Components/Modal";
+import { apiVendas } from "../../Services/api";
 
 export const MeusClientes = () => {
 
@@ -14,26 +15,23 @@ export const MeusClientes = () => {
         }else{
             setModal("hide")
         }
+    }
+
+    const [clientes, setClientes] = useState([]);
+
+    const ListarClientes = () => {
+
+        apiVendas.get('clientes')
+        .then(resultado => {
+            console.log(resultado);
+            setClientes(resultado.data)
+        })
 
     }
 
-    var cliente1 = {
-        inicial: "P",
-        nome: "Paulo Brandão",
-        totalCliente: "35,90"
-    }
-
-    var cliente2 = {
-        inicial: "P",
-        nome: "Priscila",
-        totalCliente: "99,90"
-    }
-
-    var cliente3 = {
-        inicial: "R",
-        nome: "Rafael",
-        totalCliente: "21,90"
-    }
+    useEffect(() => {
+        ListarClientes()
+    },[]);
 
     return(
         <div className="main_meus_clientes">
@@ -45,9 +43,7 @@ export const MeusClientes = () => {
             <Modal acao="Cadastrar" mostrar={modal} funcao={AbrirFecharModal} />
 
             <section>
-                <Cliente obj={cliente1} />
-                <Cliente obj={cliente2} />
-                <Cliente obj={cliente3} />
+                {clientes.map((item) => <Cliente obj={item} /> )}                
             </section>
         </div>
     );

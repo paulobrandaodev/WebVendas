@@ -6,10 +6,12 @@ export const Cliente = (props) => {
     
     return(
         <div className="cliente">
-            <span className="inicial">{props.obj.inicial}</span>
+            <span className="inicial">{props.obj.nome[0]}</span>
             <span className="nome">
                 {props.obj.nome}
-                <span className="preco">R$ {props.obj.totalCliente}</span>
+                <span className="preco">
+                    R$ {props.obj.saldos.reduce((total , item) => total += parseFloat(item.valor, 2), 0).toFixed(2)}
+                </span>
             </span>
             <button className="btn">
                 <img src={lixeira} alt="Excluir item" />
