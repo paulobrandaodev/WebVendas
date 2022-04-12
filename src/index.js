@@ -11,14 +11,20 @@ import MeusClientes from './Pages/MeusClientes'
 // CSS
 import './global.css';
 
+//Redux
+import { store } from './Store/store.js'
+import { Provider } from 'react-redux'
+
 const Rotas = () => {
   return(
-    <BrowserRouter>
-        <Routes>
-          <Route element={<Home titulo="VENDAS" />} path="/" />
-          <Route element={<MeusClientes />} path="/MeusClientes" />
-        </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+          <Routes>
+            <Route element={<Home titulo="VENDAS" />} path="/" />
+            <Route element={<MeusClientes />} path="/MeusClientes" />
+          </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
